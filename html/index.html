@@ -1,28 +1,34 @@
-<div class="all">
-    <br>
-    <br>
-    <h1>welcome to easyweb</h1>
-    <p>easly merge your nav bar, css, html, and js in one easy place</p> 
-    <br>
-    <div class="section">
-        <h1> How to use </h1>
-        <p>ezweb requires bacic knolage of html and optionaly css and js to take full advantage</p>
-        <br>
-        <p> ezweb uses 3 folders, they should be in the same directory as the python script (ezweb.py)</p>
-        <p>this means if ezweb.py is in /home, there should be /home/css/, /home/html/, /home/script/.</p>
-        <br>
-        <p> to create a webpage, create a html file and optionaly add css and js files with the name of the directory it will display <br> (ex: pagea.html, pagea.js, and pagea.css is at localhost:8080/pagea)</p>
-        <br>
-        <div class="mini">
-            <h1>html</h1>
-            <p>like most webservers, the name index.html has the root directory of the server (localhost:8080/)</p>
-            <br>
-            <p>nav.html is the html file for the nav bar, it will appear on the top of the page of every directory of the server (like the one up top) <br> use all.css for styling</p>
-        </div>
-        
-    </div>
-    <br>
-    <p> for you convinence, the example pages " <a href="pagea">pagea</a> " and "<a href="pageb">pageb</a> " are provided</p>
-    <br>
+<div class="container">
+    <h1>Welcome to EasyWeb</h1>
+    <p class="intro">Easily combine your navigation bar, CSS, HTML, and JavaScript into one streamlined environment.</p>
     
+    <section class="usage">
+        <h2>Getting Started</h2>
+        <p>To fully leverage EasyWeb, a basic understanding of HTML is essential, with optional knowledge of CSS and JavaScript for advanced features.</p>
+        <p>EasyWeb organizes your project into three essential folders: <strong>css</strong>, <strong>html</strong>, and <strong>script</strong>. These should reside in the same directory as the <code>ezweb.py</code> script.</p>
+        <p>For instance, if <code>ezweb.py</code> is located in <code>/home</code>, the folders should be in <code>/home/css/</code>, <code>/home/html/</code>, and <code>/home/script/</code>.</p>
+        <p>Create your HTML, CSS, and JavaScript files and place them in their respective folders. Files with matching names (e.g., <code>pagea.html</code>, <code>pagea.js</code>, <code>pagea.css</code>) will be served at <code>localhost:8080/pagea</code>.</p>
+    </section>
+
+    <section class="details">
+        <div class="section html">
+            <h3>HTML Structure</h3>
+            <p>The <code>index.html</code> file serves as the root of your server at <code>localhost:8080/</code>.</p>
+            <p>The <code>nav.html</code> file defines your site's navigation bar, automatically appearing at the top of each page.</p>
+        </div>
+
+        <div class="section global">
+            <h3>Global Styles and Scripts</h3>
+            <p>Apply global styling and scripting with <code>all.css</code> and <code>all.js</code>, which affect all pages on your server.</p>
+        </div>
+    </section>
+
+    <section class="run-server">
+        <h2>Running the Server</h2>
+        <p>Once your files are ready, launch the server by running <code>ezweb.py</code>. Your website will be accessible at <code>localhost:8080</code>.</p>
+    </section>
+
+    <footer class="examples">
+        <p>Explore sample pages: <a href="pagea">pagea</a> and <a href="pageb">pageb</a>.</p>
+    </footer>
 </div>
