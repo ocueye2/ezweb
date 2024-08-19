@@ -1,30 +1,58 @@
-
-.section {
-    background-color: #2a5770;
-    margin-left: 30px;
-    margin-right: 30px;
-    padding: 10px;
-    border-radius: 20px;
-    text-align: left;
-
+.container {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+    color: #333;
 }
-.all {
-    background-color: #173342;
-    color:white;
+
+h1 {
+    color: #0073e6;
+    font-size: 2.5em;
     text-align: center;
 }
 
-a {
-    color: lightblue;
+h2 {
+    color: #005bb5;
+    font-size: 2em;
+    margin-top: 20px;
 }
 
-.mini {
-    background-color: #52a3cf;
-    margin-left: 30px;
-    margin-right: 30px;
-    padding: 10px;
-    border-radius: 20px;
-    text-align: left;
+h3 {
+    color: #003d80;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
 
+.intro {
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 30px;
+}
 
+.section {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.usage, .details, .run-server {
+    margin-bottom: 30px;
+}
+
+footer.examples {
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer.examples a {
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer.examples a:hover {
+    text-decoration: underline;
 }
