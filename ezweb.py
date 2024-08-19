@@ -11,16 +11,22 @@ from http.server import SimpleHTTPRequestHandler, HTTPServer
 class MyHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
         # Check if the request path is /test
-        paths = f"{self.path}.html"
+        if self.path == "/":
+            selfpath = "index"
+        else:
+            selfpath = self.path
+
+        paths = f"{selfpath}.html"
         if paths.replace("/","") in html:
             # Respond with a 200 status code
+            
 
 
 
             self.send_response(200)
             # html loading
             try:
-                h = open(f"{path}/html/{self.path}.html")
+                h = open(f"{path}/html/{selfpath}.html")
                 ch = h.read()
             except:
                 ch = ""
@@ -35,7 +41,7 @@ class MyHandler(SimpleHTTPRequestHandler):
             #css loading
             
             try:
-                c = open(f"{path}/css/{self.path}.css")
+                c = open(f"{path}/css/{selfpath}.css")
                 cc = c.read()
             except:
                 cc = ""
@@ -47,7 +53,7 @@ class MyHandler(SimpleHTTPRequestHandler):
            
             #JS LOADING
             try:
-                c = open(f"{path}/script/{self.path}.js")
+                c = open(f"{path}/script/{selfpath}.js")
                 js = c.read()
             except:
                 js=""

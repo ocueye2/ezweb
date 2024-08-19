@@ -1,0 +1,30 @@
+
+.section {
+    background-color: #2a5770;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: left;
+
+}
+.all {
+    background-color: #173342;
+    color:white;
+    text-align: center;
+}
+
+a {
+    color: lightblue;
+}
+
+.mini {
+    background-color: #52a3cf;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: left;
+
+
+}
