@@ -101,14 +101,93 @@ class MyHandler(SimpleHTTPRequestHandler):
             # send out html 
             self.wfile.write(content.encode())
         else:
-            # 404 page
-            # todo: add custom 404 pages
+            selfpath = "404"
+
+             # html loading
+            try:
+                h = open(f"{path}/html/{selfpath}.html")
+                ch = h.read()
+            except:
+                ch = "<h1> 404 not found </h1> <p>ezweb</p>"
+
+            try:
+                c = open(f"{path}/html/nav.html")
+                nav = c.read()
+            except:
+                nav=""
+                print("no all.css found, skiping")
+
+            #css loading
+            
+            try:
+                c = open(f"{path}/css/{selfpath}.css")
+                cc = c.read()
+            except:
+                cc = ""
+            try:
+                c = open(f"{path}/css/all.css")
+                ccss = c.read()
+            except:
+                print("no all.css found, skiping")
+           
+            #JS LOADING
+            try:
+                c = open(f"{path}/script/{selfpath}.js")
+                js = c.read()
+            except:
+                js=""
+                print("no all.css found, skiping")
+
+            try:
+                c = open(f"{path}/script/all.js")
+                ajs = c.read()
+            except:
+                ajs=""
+                print("no all.css found, skiping")
+
+
+
+            self.send_header('Content-type', 'text/html')
+            self.end_headers()
+            
+            # Merge all the files together procedrealy
+            # todo: make compiler verson of this 
+            content = f"""<html>
+            <style>
+            {ccss}
+            </style>
+            <style>
+            {cc}
+            
+            
+            </style>
+            <script>
+            {ajs}
+            </script>
+            <script>
+            {js}
+            </script>
+            
+            {nav}
+            {ch}
+            
+            
+            
+            """
             print(paths.replace("/",""))
-            # If the 
-            # path is not /test, return a 404 Not Found response
+
+
             self.send_response(404)
             self.end_headers()
-            self.wfile.write(b"404 Not Found")
+            self.send_header('Content-type', 'text/html')
+            self.end_headers()
+
+
+
+
+            content = ""
+            self.wfile.write(content.encode())
+            print(content)
 
 # Set the server address and port
 server_address = ('', port)
