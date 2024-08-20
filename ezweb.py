@@ -1,4 +1,4 @@
-port = 8080
+port = 1111
 
 import os
 import sys
@@ -147,8 +147,6 @@ class MyHandler(SimpleHTTPRequestHandler):
 
 
 
-            self.send_header('Content-type', 'text/html')
-            self.end_headers()
             
             # Merge all the files together procedrealy
             # todo: make compiler verson of this 
@@ -175,19 +173,12 @@ class MyHandler(SimpleHTTPRequestHandler):
             
             """
             print(paths.replace("/",""))
-
-
-            self.send_response(404)
-            self.end_headers()
+            self.send_response(200)
             self.send_header('Content-type', 'text/html')
             self.end_headers()
-
-
-
-
-            content = ""
             self.wfile.write(content.encode())
-            print(content)
+            self.end_headers()
+
 
 # Set the server address and port
 server_address = ('', port)
