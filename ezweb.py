@@ -1,3 +1,5 @@
+port = 8080
+
 import os
 import sys
 path = os.path.dirname(sys.argv[0])
@@ -7,10 +9,10 @@ css = os.listdir(f"{path}/css")
 
 from http.server import SimpleHTTPRequestHandler, HTTPServer
 
-# Custom handler class to serve "Hello, World!" at /test
+# main loop
 class MyHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
-        # Check if the request path is /test
+        # makes index work
         if self.path == "/":
             selfpath = "index"
         else:
@@ -18,7 +20,7 @@ class MyHandler(SimpleHTTPRequestHandler):
 
         paths = f"{selfpath}.html"
         if paths.replace("/","") in html:
-            # Respond with a 200 status code
+            
             
 
 
@@ -71,7 +73,8 @@ class MyHandler(SimpleHTTPRequestHandler):
             self.send_header('Content-type', 'text/html')
             self.end_headers()
             
-            # The content of the webpage
+            # Merge all the files together procedrealy
+            # todo: make compiler verson of this 
             content = f"""<html>
             <style>
             {ccss}
@@ -95,9 +98,11 @@ class MyHandler(SimpleHTTPRequestHandler):
             
             """
             
-            # Write the content to the response
+            # send out html 
             self.wfile.write(content.encode())
         else:
+            # 404 page
+            # todo: add custom 404 pages
             print(paths.replace("/",""))
             # If the 
             # path is not /test, return a 404 Not Found response
@@ -106,11 +111,11 @@ class MyHandler(SimpleHTTPRequestHandler):
             self.wfile.write(b"404 Not Found")
 
 # Set the server address and port
-server_address = ('', 8080)
+server_address = ('', port)
 
 # Create the HTTP server
 httpd = HTTPServer(server_address, MyHandler)
 
 # Serve the webpage
-print("Serving on port 8080...")
+print(f"Serving on port {port}")
 httpd.serve_forever()
