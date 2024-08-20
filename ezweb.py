@@ -1,5 +1,6 @@
 port = 8080
 
+# im sory you have to look at this bad code
 import os
 import sys
 path = os.path.dirname(sys.argv[0])
