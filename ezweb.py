@@ -1,4 +1,4 @@
-port = 8080
+port = 8000
 
 # im sory you have to look at this bad code
 import os
